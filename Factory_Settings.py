@@ -1,3 +1,0 @@
-
-
-bot_list = {"instagram"}
