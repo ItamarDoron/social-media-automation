@@ -129,6 +129,3 @@ class InstagramBot(MainBot):
     def follow_user_list(self, user_list):
         for username in user_list:
             self.follow(username)
-
-    def user_list_input(self):
-        pass
