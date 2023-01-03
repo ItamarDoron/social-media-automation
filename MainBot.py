@@ -35,9 +35,3 @@ class MainBot():
         self.click_action(input_box, MainBot.short_action_time())
         input_box.send_keys()
         sleep(sleep_time)
-
-
-#############################
-# notes
-# security considerations -  hashing was an option for saving the password but decided to use an
-# encryption like ROT13 for saving the password string in the variable and decryption when sending to the login page
