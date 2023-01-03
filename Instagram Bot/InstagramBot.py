@@ -9,7 +9,7 @@ from MainBot import MainBotSettings
 
 class InstagramBot(MainBot):
 
-    def __init__(self, browser):  # user needs to input the web driver
+    def __init__(self, browser): 
         super().__init__(browser, InstagramBotSettings.URL)
         self.setup_login()
         self.action_list = {
@@ -50,8 +50,7 @@ class InstagramBot(MainBot):
         # get credentials
         username, password = self.getCredentials()
         # create the buttons
-        log_in_button = self.browser.find_element(By.XPATH,
-                                                  InstagramBotSettings.log_in_button_xpath)  # maybe we put this in the settings?
+        log_in_button = self.browser.find_element(By.XPATH, InstagramBotSettings.log_in_button_xpath)  
         username_field = self.browser.find_element(By.NAME, InstagramBotSettings.username_path)
         password_field = self.browser.find_element(By.NAME, InstagramBotSettings.password_path)
         self.login(username, password, password_field, username_field, log_in_button)
@@ -64,15 +63,14 @@ class InstagramBot(MainBot):
 
     def handle_notifications_window(self):
         # If notifications are off, instagram will ask to turn them on
-        turn_on_notifications_pop_up = self.browser.find_element(By.XPATH,
-                                                                 InstagramBotSettings.turn_on_notifications_pop_up_xpath)
+        turn_on_notifications_pop_up = self.browser.find_element(By.XPATH, InstagramBotSettings.turn_on_notifications_pop_up_xpath)
         try:
             self.click_action(turn_on_notifications_pop_up)
         except selenium.common.exceptions.NoSuchWindowException:
             pass
 
     def getCredentials(self):
-        username = (input("Enter username: "))  # TODO settings
+        username = (input("Enter username: ")) 
         password = (input("Enter password: "))
         while len(password) < InstagramBotSettings.minimum_password_length:
             print("Password too short, must be " + InstagramBotSettings.minimum_password_length)
