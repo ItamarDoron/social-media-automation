@@ -1,6 +1,5 @@
-
 # Paths for all buttons and input fields required for the "Instagram Bot"
-URL = "instagram.com"
+URL = "https://www.instagram.com/accounts/login/"
 
 # home
 home_button_xpath = '//*[@aria-label="Home"]'
@@ -29,4 +28,10 @@ more_options_button_xpath = '//*[@aria-label="Settings"]'
 log_out_button_xpath = '//div[text()="Log out"]'
 
 # password length
-minimum_password_length = 6
+minimum_password_length = 6;
+
+# user list input message
+USER_LIST_INPUT_MESSAGE = "Enter a comma-separated list of usernames: "
+
+# message input from user
+MESSAGE_INPUT = "What is the message?\n"
